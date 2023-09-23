@@ -1,0 +1,26 @@
+version: '3'
+services:
+  books:
+    build:
+      dockerfile: Dockerfile
+      context: ./books/
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./books:/app
+  customers:
+    build:
+      dockerfile: Dockerfile
+      context: ./customers/   # Corrected typo here
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./customers:/app     # Corrected typo here
+  orders:
+    build:
+      dockerfile: Dockerfile
+      context: ./orders/
+    ports:
+      - "6000:6000"  
+    volumes:
+      - ./orders:/app
